@@ -25,6 +25,12 @@ export const INIT_CODE_HASH = '0x767207be629d587cbedb620cbccb6ce161fa59c1b8d670b
 
 export const ROUTER = '0x00095E52D8771bB7A044ee69Dcb40A988e72a48A'
 
+export const LPname = 'UniFlare Liquidity'
+
+export const LPsymbol = 'UNI-FLR'
+
+export const NATIVEsymbol = 'UNIf'
+export const NATIVEname = 'UniFlare'
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(100000000)
 
@@ -43,6 +49,9 @@ export enum SolidityType {
   uint8 = 'uint8',
   uint256 = 'uint256'
 }
+
+export const etherName = 'FLARE'
+export const etherSymbol = 'FLR'
 
 export const SOLIDITY_TYPE_MAXIMA = {
   [SolidityType.uint8]: JSBI.BigInt('0xff'),

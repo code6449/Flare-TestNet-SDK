@@ -38,6 +38,10 @@ var _SOLIDITY_TYPE_MAXIMA;
 var FACTORY_ADDRESS = '0x3834D86D32D0A8b6d5c59cCddD07Ea20d6292F6e';
 var INIT_CODE_HASH = '0x767207be629d587cbedb620cbccb6ce161fa59c1b8d670bc86561df26653f2b1';
 var ROUTER = '0x00095E52D8771bB7A044ee69Dcb40A988e72a48A';
+var LPname = 'UniFlare Liquidity';
+var LPsymbol = 'UNI-FLR';
+var NATIVEsymbol = 'UNIf';
+var NATIVEname = 'UniFlare';
 var MINIMUM_LIQUIDITY = /*#__PURE__*/JSBI.BigInt(100000000); // exports for internal consumption
 
 var ZERO = /*#__PURE__*/JSBI.BigInt(0);
@@ -56,6 +60,8 @@ var SolidityType;
   SolidityType["uint256"] = "uint256";
 })(SolidityType || (SolidityType = {}));
 
+var etherName = 'FLARE';
+var etherSymbol = 'FLR';
 var SOLIDITY_TYPE_MAXIMA = (_SOLIDITY_TYPE_MAXIMA = {}, _SOLIDITY_TYPE_MAXIMA[SolidityType.uint8] = /*#__PURE__*/JSBI.BigInt('0xff'), _SOLIDITY_TYPE_MAXIMA[SolidityType.uint256] = /*#__PURE__*/JSBI.BigInt('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'), _SOLIDITY_TYPE_MAXIMA);
 
 function _defineProperties(target, props) {
@@ -367,7 +373,7 @@ function Currency(decimals, symbol, name) {
  * The only instance of the base class `Currency`.
  */
 
-Currency.ETHER = /*#__PURE__*/new Currency(18, 'FLR', 'FLARE');
+Currency.ETHER = /*#__PURE__*/new Currency(18, etherSymbol, etherName);
 var ETHER = Currency.ETHER;
 
 var _WETH;
@@ -756,7 +762,7 @@ var Pair = /*#__PURE__*/function () {
   function Pair(tokenAmountA, tokenAmountB) {
     var tokenAmounts = tokenAmountA.token.sortsBefore(tokenAmountB.token) // does safety checks
     ? [tokenAmountA, tokenAmountB] : [tokenAmountB, tokenAmountA];
-    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token), 18, 'UNI-FLR', 'UniFlare Liquidity');
+    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token), 18, LPsymbol, LPname);
     this.tokenAmounts = tokenAmounts;
   }
 
@@ -1574,7 +1580,11 @@ exports.Fraction = Fraction;
 exports.INIT_CODE_HASH = INIT_CODE_HASH;
 exports.InsufficientInputAmountError = InsufficientInputAmountError;
 exports.InsufficientReservesError = InsufficientReservesError;
+exports.LPname = LPname;
+exports.LPsymbol = LPsymbol;
 exports.MINIMUM_LIQUIDITY = MINIMUM_LIQUIDITY;
+exports.NATIVEname = NATIVEname;
+exports.NATIVEsymbol = NATIVEsymbol;
 exports.Pair = Pair;
 exports.Percent = Percent;
 exports.Price = Price;

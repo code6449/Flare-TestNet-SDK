@@ -7,9 +7,9 @@ export {
   TradeType,
   Rounding,
   FACTORY_ADDRESS,
-  INIT_CODE_HASH,
-  MINIMUM_LIQUIDITY,
-  ROUTER
+  INIT_CODE_HASH, NATIVEsymbol,
+  MINIMUM_LIQUIDITY,NATIVEname,
+  ROUTER, LPname, LPsymbol
 } from './constants'
 
 export * from './errors'
